@@ -1,0 +1,37 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+[*.{c,cc,cpp,cxx,h,hh,hpp,hxx,inl}]
+# Braces on the same line (K&R / Attach style)
+cpp_new_line_before_open_brace_namespace = same_line
+cpp_new_line_before_open_brace_type = same_line
+cpp_new_line_before_open_brace_function = same_line
+cpp_new_line_before_open_brace_block = same_line
+cpp_new_line_before_open_brace_lambda = same_line
+
+# public:/private: are not indented relative to the class
+cpp_indent_braces = false
+cpp_indent_access_specifiers = false
+
+# const Mesh& mesh, not const Mesh &mesh
+cpp_space_pointer_reference_alignment = left
+
+[*.{glsl,vert,frag,geom,comp,tesc,tese}]
+indent_style = space
+indent_size = 4
+
+[{CMakeLists.txt,*.cmake}]
+indent_style = space
+indent_size = 4
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
