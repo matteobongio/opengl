@@ -24,6 +24,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 target_compile_definitions(opengl PRIVATE
     SHADER_DIR="${CMAKE_SOURCE_DIR}/src/shaders"
+    RESOURCES="${CMAKE_SOURCE_DIR}/resources"
 )
 
 target_link_libraries(opengl

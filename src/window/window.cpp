@@ -1,6 +1,5 @@
 #include "window.ih"
 
-
 void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     auto* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
@@ -48,10 +47,3 @@ Window::~Window() {
     glfwTerminate();
 }
 
-int Window::windowShouldClose() {
-    return glfwWindowShouldClose(m_window);
-}
-void Window::swapBuffersAndPollEvents() {
-    glfwSwapBuffers(m_window);
-    glfwPollEvents();
-}

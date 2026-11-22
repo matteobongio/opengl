@@ -1,0 +1,9 @@
+#pragma once
+
+#include "texture.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.external"
+
+#include <filesystem>
+#include <stdexcept>

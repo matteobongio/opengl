@@ -1,7 +1,4 @@
 #include "shader.ih"
-#include <stdexcept>
-#include <utility>
-#include <iostream>
 
 std::string readShader(std::string const &relPath)
 {

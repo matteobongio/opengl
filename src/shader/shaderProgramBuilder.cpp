@@ -1,5 +1,4 @@
 #include "shader.ih"
-#include <iostream>
 
 ShaderProgramBuilder::ShaderProgramBuilder()
 {

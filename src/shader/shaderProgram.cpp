@@ -10,8 +10,3 @@ ShaderProgram::~ShaderProgram()
 {
     glDeleteProgram(m_shaderProgram);
 }
-
-void ShaderProgram::use()
-{
-    glUseProgram(m_shaderProgram);
-}
