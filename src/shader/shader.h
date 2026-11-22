@@ -8,14 +8,16 @@ class ShaderProgramBuilder;
 class ShaderProgram {
 public:
     friend class ShaderProgramBuilder;
+    ShaderProgram(ShaderProgram &&);
     ShaderProgram(ShaderProgram const &) = delete;
     ShaderProgram &operator=(ShaderProgram const &) = delete;
+    ShaderProgram &operator=(ShaderProgram &&);
     ~ShaderProgram();
     void use() const;
     GLuint getUniformLocation(std::string const &uniform) const;
 private:
     ShaderProgram(GLuint shaderProgram);
-    GLuint m_shaderProgram;
+    GLuint m_shaderProgram = 0;
 };
 
 class ShaderProgramBuilder {
@@ -29,7 +31,7 @@ private:
         Shader(Shader &&other);
         ~Shader();
     private:
-        GLuint m_shader;
+        GLuint m_shader = 0;
     };
 public:
     ShaderProgramBuilder();
@@ -41,7 +43,7 @@ public:
 
 private:
     std::vector<Shader> m_shaders;
-    GLuint m_shaderProgram;
+    GLuint m_shaderProgram = 0;
 };
 
 

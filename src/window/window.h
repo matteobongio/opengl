@@ -1,7 +1,9 @@
 #pragma once
+#include "game/game.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
+#include <optional>
 
 class Window {
 public:
@@ -11,11 +13,13 @@ public:
     Window &operator=(Window const &) = delete;
     int windowShouldClose() const;
     void swapBuffersAndPollEvents() const;
+    void attachGame(Game &game);
 private:
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
     size_t m_width;
     size_t m_height;
     GLFWwindow*  m_window;
+    std::optional<Game &> m_game;
 };
 
 

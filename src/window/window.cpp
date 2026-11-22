@@ -3,6 +3,9 @@
 void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     auto* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
+    if (self->m_game) {
+        self->m_game.value().windowResize(width, height);
+    }
     self->m_height = height;
     self->m_width = width;
     glViewport(0, 0, width, height);
@@ -47,3 +50,9 @@ Window::~Window() {
     glfwTerminate();
 }
 
+
+
+void Window::attachGame(Game &game)
+{
+    m_game = game;
+}
