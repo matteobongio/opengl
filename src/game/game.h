@@ -1,7 +1,6 @@
 #pragma once
-
+#include "cat/cat.h"
 #include "shader/shader.h"
-#include "texture/texture.h"
 #include <glm/mat4x4.hpp>
 
 class Game {
@@ -15,8 +14,6 @@ public:
 private:
     glm::mat4 m_projection;
     ShaderProgram triangleShader;
-
-    Texture2D catTex;
-
-    unsigned int VAO;
+    size_t m_width, m_height;
+    Cat m_cat;
 };

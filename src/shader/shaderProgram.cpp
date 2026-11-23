@@ -1,5 +1,4 @@
 #include "shader.ih"
-#include <utility>
 
 ShaderProgram::ShaderProgram(GLuint shaderProgram) :
     m_shaderProgram(shaderProgram)

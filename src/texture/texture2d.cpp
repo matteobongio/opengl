@@ -6,7 +6,7 @@ Texture2D::Texture2D(std::string const &file) :
     m_wrapS(GL_REPEAT),
     m_wrapT(GL_REPEAT)
 {
-    stbi_set_flip_vertically_on_load(true);
+    // stbi_set_flip_vertically_on_load(true);
     std::filesystem::path full = std::filesystem::path(RESOURCES) / file;
     m_data = stbi_load(full.c_str(), &m_width, &m_height, &m_components,  0);
 

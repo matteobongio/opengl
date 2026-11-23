@@ -2,7 +2,6 @@
 #include <GLFW/glfw3.h>
 #include "window/window.h"
 #include "shader/shader.h"
-#include "texture/texture.h"
 
 int main() {
     Window window(800, 600, "Learn OpenGL");
@@ -10,7 +9,6 @@ int main() {
     ShaderProgramBuilder triangleBuilder;
     triangleBuilder.addShader("triangle.vert");
     triangleBuilder.addShader("triangle.frag");
-
 
     Game game(800, 600, triangleBuilder.build());
 
@@ -23,6 +21,10 @@ int main() {
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+
+        game.ProcessInput(deltaTime);
+
+        game.Update(deltaTime);
 
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
