@@ -1,7 +1,7 @@
 #pragma once
 #include "glm/ext/matrix_float4x4.hpp"
 #include "shader/shader.h"
-#include "texture/texture.h"
+#include "sprite/sprite.h"
 
 class Cat {
 public:
@@ -9,9 +9,9 @@ public:
     void update(float dt);
     void render(ShaderProgram const &sp);
 private:
-    Texture2D catTex;
+    Sprite m_sprite;
     glm::mat4 m_model;
     unsigned int VAO;
-    int x, y;
+    glm::vec3 position;
     float len, angle;
 };
