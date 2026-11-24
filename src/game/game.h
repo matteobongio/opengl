@@ -1,4 +1,5 @@
 #pragma once
+#include "camera/camera.h"
 #include "cat/cat.h"
 #include "glm/ext/matrix_float4x4.hpp"
 #include "shader/shader.h"
@@ -18,4 +19,5 @@ private:
     size_t m_width, m_height;
     Cat m_cat;
     glm::mat4 m_scale;
+    Camera m_camera;
 };

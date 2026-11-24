@@ -8,7 +8,7 @@ public:
     Cat();
     void update(float dt);
     void render(ShaderProgram const &sp);
-    glm::vec3 position;
+    glm::vec2 position;
 private:
     Sprite m_sprite;
     glm::mat4 m_model;
