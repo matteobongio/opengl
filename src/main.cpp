@@ -1,6 +1,3 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include "game/keys.h"
 #include "window/window.h"
 #include "shader/shader.h"
 

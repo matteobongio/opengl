@@ -8,4 +8,5 @@ public:
     Camera(glm::vec2 const & position);
     glm::mat4 viewMatrix();
     glm::vec2 position;
+    float angle = 0.0f;
 };

@@ -6,8 +6,7 @@ Game::Game(size_t width, size_t height, ShaderProgram &&sh) :
     m_projection(glm::ortho(0.0f, static_cast<float>(width), static_cast<float>(height), 0.0f, -1.0f, 1.0f)),
     m_scale(glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f))),
     triangleShader(std::move(sh))
-{
-}
+{ }
 
 void Game::windowResize(size_t width, size_t height)
 {
@@ -32,6 +31,13 @@ void Game::ProcessInput(float dt)
     if (Keys::getInstance().keys[GLFW_KEY_D]) {
         m_camera.position += glm::vec2(50, 0) * dt;
     }
+    float cameraSpinSpeed = 2 * glm::pi<float>() / 10;
+    if (Keys::getInstance().keys[GLFW_KEY_L]) {
+        m_camera.angle += cameraSpinSpeed * dt;
+    }
+    if (Keys::getInstance().keys[GLFW_KEY_K]) {
+        m_camera.angle -= cameraSpinSpeed * dt;
+    }
 }
 
 void Game::Update(float dt)
@@ -55,5 +61,4 @@ void Game::Render()
     triangleShader.setUniformMat4("gameScale", m_scale);
 
     m_cat.render(triangleShader);
-
 }

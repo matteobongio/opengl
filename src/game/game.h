@@ -20,4 +20,5 @@ private:
     Cat m_cat;
     glm::mat4 m_scale;
     Camera m_camera;
+    float angle = 0.0f;
 };
