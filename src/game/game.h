@@ -1,5 +1,6 @@
 #pragma once
 #include "cat/cat.h"
+#include "glm/ext/matrix_float4x4.hpp"
 #include "shader/shader.h"
 #include <glm/mat4x4.hpp>
 
@@ -16,4 +17,5 @@ private:
     ShaderProgram triangleShader;
     size_t m_width, m_height;
     Cat m_cat;
+    glm::mat4 m_scale;
 };

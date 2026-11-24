@@ -8,10 +8,10 @@ public:
     Cat();
     void update(float dt);
     void render(ShaderProgram const &sp);
+    glm::vec3 position;
 private:
     Sprite m_sprite;
     glm::mat4 m_model;
     unsigned int VAO;
-    glm::vec3 position;
     float len, angle;
 };

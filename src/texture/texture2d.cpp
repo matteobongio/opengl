@@ -1,7 +1,7 @@
 #include "texture.ih"
 
 Texture2D::Texture2D(std::string const &file) :
-    m_internalFormat(GL_RGB),
+    m_internalFormat(GL_RGBA),
     m_imageFormat(GL_RGB),
     m_wrapS(GL_REPEAT),
     m_wrapT(GL_REPEAT)
@@ -11,7 +11,6 @@ Texture2D::Texture2D(std::string const &file) :
     m_data = stbi_load(full.c_str(), &m_width, &m_height, &m_components,  0);
 
     if (m_components == 4) {
-        //TODO: m_internalFormat = GL_RGBA;
         m_imageFormat = GL_RGBA;
     }
 
