@@ -27,8 +27,8 @@ void Window::framebuffer_size_callback(GLFWwindow* window, int width, int height
 
 
 Window::Window(size_t width, size_t height, std::string title):
-m_height(height),
-m_width(width)
+    m_height(height),
+    m_width(width)
 {
     if (!glfwInit())
         throw std::runtime_error("Failed to initialize GLFW");
